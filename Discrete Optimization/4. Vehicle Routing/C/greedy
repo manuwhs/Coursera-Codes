@@ -1,0 +1,24 @@
+    while (taken != n_costum - 1) {
+	    costum  = 0;
+	    aux_car += 1;
+	    cont = 0;
+	    if (aux_car + 1 > total_cars) {
+		printf("------------------ Cagada --------------\n");
+	    }
+	    while (costum < n_costum - 1){
+		if (greedy_taken [order[costum]+1] == 0) {  /* If the costumer hasent been taken yet */
+
+			if (cap_left[aux_car] - C[order[costum]+1] > 0 ) {	/* If it fits in the car demand*/
+
+				car_costumers[aux_car][1 + cont] = order[costum]+1;
+// 				printf("%i -> %f \n",  order[costum]+1, C[order[costum]+1]);
+				cap_left[aux_car] -= C[order[costum]+1];
+				taken += 1;
+				greedy_taken[order[costum]+1] = 1;
+				cont += 1;
+				n_costum_car[aux_car] += 1;
+			}
+		}
+	    	costum += 1;
+	    }
+    }

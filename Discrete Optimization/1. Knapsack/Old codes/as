@@ -1,0 +1,6 @@
+	if (n.depth < pa[6])   # If there is another object to add
+		if (n.room - pa[0][n.depth] < 0):
+#			print "Demasiado peso"
+			pa[4] = n.value
+			pa[5] = n.branch + [0]*(pa[3]-ant.depth)
+			return 0
